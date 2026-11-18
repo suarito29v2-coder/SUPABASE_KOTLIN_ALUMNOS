@@ -1,0 +1,126 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6F8"
+    tools:context=".MainActivity">
+
+    <!-- LOGOTIPO UTEQ -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Logo UTEQ"
+        android:src="@drawable/logouteq"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TITULO PRINCIPAL -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="Alumnos UTEQ"
+        android:textColor="#1B5E20"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+    <!-- NOMBRE COMPLETO DE LA UNIVERSIDAD -->
+    <TextView
+        android:id="@+id/tvUniversidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO"
+        android:textColor="#2E7D32"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
+
+    <!-- BOTON ACTUALIZAR -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConsultar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:text="Actualizar lista"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="#2E7D32"
+        app:cornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUniversidad" />
+
+    <!-- TARJETA DE ALUMNOS -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardLista"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnConsultar">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <TextView
+                android:id="@+id/txtAlumnos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="6dp"
+                android:padding="16dp"
+                android:text="Pulse actualizar para consultar."
+                android:textColor="#212121"
+                android:textSize="16sp" />
+
+        </androidx.core.widget.NestedScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- INDICADOR DE CARGA -->
+    <ProgressBar
+        android:id="@+id/progressMaterias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#2E7D32"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/cardLista"
+        app:layout_constraintEnd_toEndOf="@id/cardLista"
+        app:layout_constraintStart_toStartOf="@id/cardLista"
+        app:layout_constraintTop_toTopOf="@id/cardLista" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
